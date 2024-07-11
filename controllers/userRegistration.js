@@ -1,4 +1,5 @@
 const { EMPLOYEE } = require("../database/connection");
+const useSendRegistrationEmail = require("../utils/nodeMailerEmail");
 
 const userRegistration = (req, res) => {
   const { name, phone, email, gender, imagePath, password } = req.body;
@@ -16,6 +17,7 @@ const userRegistration = (req, res) => {
       imagePath,
       password,
     }).then((resp) => {
+      useSendRegistrationEmail(email);
       res.json({
         success: true,
         msg: `Employee registered Succesfully with email:${email} please wait for approval from the admin`,
