@@ -6,7 +6,7 @@ const userRegistration = (req, res) => {
     if (resp) {
       return res
         .status(400)
-        .json({ message: "Employee with same credentials already exists" });
+        .json({ msg: "Employee with same credentials already exists" });
     }
     EMPLOYEE.create({
       name,
