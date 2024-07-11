@@ -20,7 +20,7 @@ const userRegistration = (req, res) => {
       useSendRegistrationEmail(email);
       res.json({
         success: true,
-        msg: `Employee registered Succesfully with email:${email} please wait for approval from the admin`,
+        msg: "Thank you for regestering, please check your email for further steps",
       });
     });
   });
